@@ -31,7 +31,7 @@ buildah config --port 8000 $NEW_IMAGE
 buildah config --port 1936 $NEW_IMAGE
 buildah copy $NEW_IMAGE $SRC_DIR/haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
 
-buildah config --label maintainer="mark@purplecarrot.co.uk" $NEW_IMAGE
+buildah config --label maintainer="mark" $NEW_IMAGE
 buildah config --entrypoint "/usr/sbin/haproxy -d -f /usr/local/etc/haproxy/haproxy.cfg" $NEW_IMAGE
 
 buildah commit --squash $NEW_IMAGE $DEST_IMAGE
