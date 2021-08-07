@@ -1,0 +1,29 @@
+alias: Dive
+sequence:
+  - data:
+      color_name: red
+      entity_id:
+        - light.kitchen
+        - light.lounge
+    service: homeassistant.turn_on
+  - data:
+      entity_id: media_player.lounge
+      media_content_id: 'http://skylake:8123/local/submarine.wav'
+      media_content_type: music
+    service: media_player.play_media
+  - delay: '00:00:06'
+  - data:
+      entity_id: media_player.lounge
+      media_content_id: 'http://skylake:8123/local/sonar.mp3'
+      media_content_type: music
+    service: media_player.play_media
+  - delay: '00:00:22'
+  - data:
+      group_name: Lounge
+      scene_name: Relax
+    service: hue.hue_activate_scene
+  - data:
+      group_name: Kitchen
+      scene_name: Relax
+    service: hue.hue_activate_scene
+mode: single

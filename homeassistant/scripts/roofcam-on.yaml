@@ -1,0 +1,10 @@
+alias: Turn ON RoofCam on TV
+sequence:
+  - service: media_player.select_source
+    data:
+      source: HDMI
+    entity_id: media_player.q80r
+  - service: shell_command.roofcam
+    entity_id: media_player.q80r
+    data: {}
+mode: single

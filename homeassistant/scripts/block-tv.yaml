@@ -1,0 +1,10 @@
+alias: Turn OFF RoofCam on TV
+sequence:
+  - service: shell_command.roofcam
+    entity_id: media_player.q80r
+    data: {}
+  - service: media_player.select_source
+    data:
+      source: TV
+    entity_id: media_player.q80r
+mode: single

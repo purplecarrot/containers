@@ -1,0 +1,9 @@
+# Don't want to accidentally commit private keys, certs or config
+homeassistant/config*
+homeassistant/media*
+unifi/config*
+smokeping/config*
+smokeping/data*
+nginx/www
+*.key
+*.crt
